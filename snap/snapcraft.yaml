@@ -6,7 +6,7 @@
     This software can be used for TCP messaging test tool. Server and Client mode can not be run at the same time. You should run this modes from different machines.
 
   grade: stable # must be 'stable' to release into candidate/stable channels
-  confinement: devmode # use 'strict' once you have the right plugs and slots
+  confinement: strict # use 'strict' once you have the right plugs and slots
 
   parts:
     my-part:
