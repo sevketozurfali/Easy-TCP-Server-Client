@@ -1,6 +1,6 @@
 name: tcp-server-client-tool
 base: core18
-version: '1.0'
+version: '1.1'
 summary: Easily install to test TCP connections.
 description: |
   This software can be used for TCP messaging test tool. Server and Client mode can not be run at the same time. You should run this modes from different machines.
@@ -32,6 +32,14 @@ parts:
       - libgdk-pixbuf2.0-0
       - libqt5svg5 # for loading icon themes which are svg
       - locales-all
+  glib-only:
+    source: .
+    source-subdir: glib-only
+    plugin: make
+    build-packages:
+      - libglib2.0-dev
+    stage-packages:
+      - libglib2.0-bin
   desktop-qt5:
     source: .
     source-subdir: qt
