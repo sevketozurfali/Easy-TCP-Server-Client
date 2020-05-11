@@ -8,47 +8,51 @@ description: |
 grade: stable
 confinement: strict
 
-plugs:
-  gtk-3-themes:
-    interface: content
-    target: $SNAP/usr/share/themes
-    default-provider: gtk-common-themes
-  icon-themes:
-    interface: content
-    target: $SNAP/usr/share/icons
-    default-provider: gtk-common-themes
-  sound-themes:
-    interface: content
-    target: $SNAP/usr/share/sounds
-    default-provider: gtk-common-themes
+apps:
+  tcp-server-client-tool:
+    command: desktop-launch tcp-server-client-tool
+    plugs:
+        - unity7
+        - x11
+        - network
+        - home
+        - opengl
+        - pulseaudio
+        - browser-support
 
 parts:
-  desktop:
-    # See 'snapcraft plugins'
+  application:
     plugin: qmake
     source: .
 
     stage-packages:
-      - libdouble-conversion1
-      - libfreetype6
-      - libgl1
-      - libglvnd0
-      - libglx0
-      - libgraphite2-3
-      - libharfbuzz0b
-      - libicu60
-      - libpng16-16
-      - libqt5core5a
+      - libxkbcommon0
+      - ttf-ubuntu-font-family
+      - dmz-cursor-theme
+      - light-themes
+      - locales-all
+      - shared-mime-info
       - libqt5gui5
-      - libqt5network5
+      - libqt5core5a
+      - libqt5webkit5
+      - libqt5concurrent5
+      - libqt5quickparticles5
       - libqt5widgets5
-      - libx11-6
-      - libxau6
-      - libxcb1
-      - libxdmcp6
-      - qt5-gtk-platformtheme
-
+      - libqt5quickwidgets5
+      - libqt5network5
+      - libqt5multimediaquick-p5
+      - libqt5multimediawidgets5
+      - libqt5xml5
     build-packages:
-      - build-essential
-      - libx11-xcb-dev
+      - libgtk2.0-0
+      - libdrm-dev
+      - libegl1-mesa-dev
+      - qtbase5-dev
+      - libgl1-mesa-dev
       - libglu1-mesa-dev
+      - libqt5opengl5-dev
+      - libwayland-dev
+      - libx11-dev
+      - qtmultimedia5-dev
+      - libqt5webkit5-dev
+
