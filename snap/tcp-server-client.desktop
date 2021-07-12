@@ -1,0 +1,8 @@
+ [Desktop Entry]
+  Name=Easy TCP Server Client
+  Comment=Easy Tcp connection test App.
+  Exec=tcp-server-client
+  Icon=${SNAP}/meta/icon.png # replace name to your app name
+  Terminal=false
+  Type=Application
+  Categories=Education; #adjust accordingly your snap category
