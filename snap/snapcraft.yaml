@@ -13,6 +13,7 @@ parts:
   easy-tcp-server-client:
     source: .
     plugin: qmake
+    build-attributes: [keep-execstack]
     build-packages:
     - qtdeclarative5-dev
     - qtquickcontrols2-5-dev

@@ -32,3 +32,5 @@
 *.app
 
 tcp_server.pro.user
+
+*.snap
